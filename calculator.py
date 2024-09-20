@@ -38,33 +38,8 @@ def operator_validator(operation):
        else: return False
                        
 
-def main():
-    print("Welcome to python calculator")
-    
-    
-    operation = ""
-    while operation != '7':
-            print('choose an operator to calculate: ')
-            operation = input("1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Power of, 6-Modulos, 7-Exit:  ")
-
-            while not operator_validator(operation):
-                    print()
-                    print("please enter correct choice from below")
-                    operation = input("1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Power of, 6-Modulos, 7-Exit:  ")
-                    
-            #handle validate number input
-            while True and operation.upper() != '7':
-                  try:
-                       num1 = int(input('please choose number 1: '))    
-                       num2 = int(input('please choose number 2: '))
-                           
-                  except:
-                         print('please enter numbers only!')
-                         continue
-                  else: break
-                      
-                               
-                
+def switch(operation, num1, num2):
+            
             if operation == '1':
                     result = num1 + num2
                     calculate(result)
@@ -91,6 +66,37 @@ def main():
 
             elif operation == '7':
                     quit()
+
+
+def main():
+    print("Welcome to python calculator")
+    
+    
+    operation = ""
+    while operation != '7':
+            print('choose an operator to calculate: ')
+            operation = input("1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Power of, 6-Modulos, 7-Exit:  ")
+
+            while not operator_validator(operation):
+                    print()
+                    print("please enter correct choice from below")
+                    operation = input("1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Power of, 6-Modulos, 7-Exit:  ")
+                    
+            #handle validate number input
+            while True and operation.upper() != '7':
+                  try:
+                       num1 = int(input('please choose number 1: '))    
+                       num2 = int(input('please choose number 2: '))
+                           
+                  except:
+                         print('please enter numbers only!')
+                         continue
+                  else: break
+                      
+
+            switch(operation, num1, num2)                           
+                
+            
                                                
                         
                     

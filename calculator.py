@@ -30,7 +30,7 @@ def calculate(result):
        div_by_five(result)
        print()
 
-def operator_validator(operation):
+def is_operator_valid(operation):
        operations = ['1', '2', '3','4', '5', '6', '7']
        for i in operations:
               if i == operation:
@@ -41,28 +41,22 @@ def operator_validator(operation):
 def switch(operation, num1, num2):
             
             if operation == '1':
-                    result = num1 + num2
-                    calculate(result)
+                    calculate(num1 + num2)
 
             elif operation == '2':
-                    result = num1 - num2
-                    calculate(result)
+                    calculate(num1 - num2)
                     
             elif operation == '3':
-                   result = num1 * num2 
-                   calculate(result)
+                   calculate(num1 * num2)
 
             elif operation == '4':
-                   result = num1 / num2
-                   calculate(result)
+                   calculate(num1 / num2)
 
             elif operation == '5':
-                    result = pow(num1, num2)
-                    calculate(result)       
+                    calculate(pow(num1, num2))       
 
             elif operation == '6':
-                    result = num1 % num2 
-                    calculate(result)
+                    calculate(num1 % num2)
 
             elif operation == '7':
                     quit()
@@ -77,7 +71,7 @@ def main():
             print('choose an operator to calculate: ')
             operation = input("1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Power of, 6-Modulos, 7-Exit:  ")
 
-            while not operator_validator(operation):
+            while not is_operator_valid(operation):
                     print()
                     print("please enter correct choice from below")
                     operation = input("1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Power of, 6-Modulos, 7-Exit:  ")
